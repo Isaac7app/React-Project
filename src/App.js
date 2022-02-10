@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Cardlist from './components/card-list/card-list';
+import Cardlist from './components/card-list.component/card-list';
 import './App.css';
 
 
@@ -8,7 +8,8 @@ class App extends Component{
     super();
 
     this.state={
-      monsters :[]
+      monsters :[],
+      searchFiled :''
     }
   }
 
@@ -19,9 +20,15 @@ class App extends Component{
   }
 
   render(){
+    const { monsters, searchFiled} = this.state;
+
+    const filteredMonsters = monsters.filter(monster =>
+      monsters.name.toLowerCase().include(searchFiled.toLocaleLowerCase())
+    )
+
     return (
       <div className="App">
-       <Cardlist monsters={this.state.monsters} />
+       <Cardlist monsters={filteredMonsters} />
        
       </div>
     );
