@@ -1,9 +1,13 @@
 import React from 'react'
 
-const SearchBox = () => {
+const SearchBox = ({placeholder , handledChange}) => {
   return (
-    <input type='search' placeholder='serach monsters'>
-    </input>
+    <input
+     type='search' 
+     placeholder={placeholder}
+     onChange={handledChange}
+     />
+  
   )
 }
 
