@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import './search-box.styless.css';
+
 
 const SearchBox = ({placeholder , handledChange}) => {
   return (
